@@ -10,6 +10,27 @@ int backward(long frame, int i) {
   return totalLEDs - 1 - i;
 }
 
+#define SIDE_LENGTH 14
+int horizontal(long frame, int i)
+{
+  int returnValue = i / (SIDE_LENGTH + 1);
+
+  return returnValue;
+}
+
+int vertical(long frame, int i)
+{
+  int returnValue = i % (SIDE_LENGTH+1);
+
+  if( (i / (SIDE_LENGTH + 1)) % 2)
+  {
+    returnValue = (SIDE_LENGTH + 1) - returnValue;
+  }
+
+  return returnValue;
+}
+
+
 int intoSpace(long frame, int i)
 {
   int returnValue = i / NUM_LEDS_PER_STRIP;
