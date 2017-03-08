@@ -68,7 +68,17 @@ int dekonstruktor(long frame, int i)
   } 
 }
 
-int deskonstruktorIntoSpace(long frame, int i)
+int dekonstruktorIntoSpace(long frame, int i)
 {
   return dekonstruktor(frame, intoSpace(frame, i));
+}
+
+int dekonstrucktorVertical(long frame, int i)
+{
+  return dekonstruktor(frame, vertical(frame, i));
+}
+
+int dekonstruktorHorizontal(long frame, int i)
+{
+  return dekonstruktor(frame, horizontal(frame, i));
 }

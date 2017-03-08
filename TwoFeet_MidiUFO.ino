@@ -164,7 +164,7 @@ void SetNewMapping(int value)
   }
   else if(value > 7)
   {
-    mapping = &deskonstruktorIntoSpace;
+    mapping = &dekonstruktorIntoSpace;
   }
   //else if(value == 7)
   //{
