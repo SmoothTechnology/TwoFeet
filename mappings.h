@@ -10,7 +10,7 @@ int backward(long frame, int i) {
   return totalLEDs - 1 - i;
 }
 
-#define SIDE_LENGTH 14
+#define SIDE_LENGTH 72
 int horizontal(long frame, int i)
 {
   int returnValue = i / (SIDE_LENGTH + 1);

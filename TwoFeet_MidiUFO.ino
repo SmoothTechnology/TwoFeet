@@ -1,10 +1,10 @@
 //#define USE_OCTOWS2811
 
-//#define USE_VDMX
+#define USE_VDMX
 
 //#define USB_MIDI
 
-#define USING_ABLETON
+//#define USING_ABLETON
 
 // #ifndef USB_MIDI
 #include <Arduino.h>
@@ -162,9 +162,25 @@ void SetNewMapping(int value)
   {
     mapping = &dekonstruktor;
   }
-  else if(value > 7)
+  else if(value == 7)
   {
     mapping = &dekonstruktorIntoSpace;
+  }
+  else if(value == 8)
+  {
+    mapping = &horizontal;
+  }
+  else if(value == 9)
+  {
+    mapping = &vertical;
+  }
+  else if(value == 10)
+  {
+    mapping = &dekonstruktorHorizontal;
+  }
+  else if(value >= 11)
+  {
+    mapping = &dekonstrucktorVertical;
   }
   //else if(value == 7)
   //{
@@ -349,7 +365,7 @@ void setup() {
 
 //  LEDS.addLeds<OCTOWS2811>(leds, NUM_LEDS_PER_STRIP).setCorrection( 0x9FFAF0 );
   // FastLED.addLeds<WS2811, 17, GRB>(leds, 0,BACKLEDS).setCorrection( 0x9FFAF0 );
-  FastLED.addLeds<WS2811, 2, GRB>(leds, 0,BACKLEDS).setCorrection( 0x9FFAF0 );
+  FastLED.addLeds<WS2811, 17, GRB>(leds, 0,BACKLEDS).setCorrection( 0x9FFAF0 );
 
   LEDS.setBrightness(255);
 
@@ -500,13 +516,14 @@ void drawLEDs(){
     frame = 0;
   }
 
+  /*
   if (light)
     digitalWrite(13, HIGH);
   else
     digitalWrite(13, LOW);
 
   light = !light;
-
+  */
 }
 
 int _interval = 33;

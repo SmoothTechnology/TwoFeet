@@ -5,7 +5,7 @@ boolean light = false;
 //#define RUN_DEBUG 1
 unsigned long debugTimer = 0;
 // #define BACKLEDS 369
-#define BACKLEDS 20
+#define BACKLEDS 372
 // #define NUM_STRIPS 3
 #define NUM_LEDS_PER_STRIP 100
 #define TRUE_NUM_LEDS_PER_STRIP 232
